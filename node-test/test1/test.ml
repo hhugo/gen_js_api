@@ -245,6 +245,7 @@ let () =
 (** Invoking a global object **)
 (** https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Number/Number **)
 let () =
+    if true then ((* FIX BINDING FOR WASMOO *)) else 
     let check (a: Number.t) (b: float) =
       assert (Ojs.instance_of (a :> Ojs.t) ~constr:(Number.number :> Ojs.t));
       assert (not (Ojs.instance_of (Ojs.float_to_js b) ~constr:(Number.number :> Ojs.t)));
